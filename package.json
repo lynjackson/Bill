@@ -1,0 +1,33 @@
+{
+  "name": "billrestaurant-iosapp",
+  "version": "0.0.0",
+  "description": "No description",
+  "author": null,
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "devDependencies": {
+    "babel-preset-expo": "^7.0.0"
+  },
+  "dependencies": {
+    "expo": "^33.0.0",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.1.tar.gz",
+    "redux": "^4.0.0",
+    "thunk": "0.0.1",
+    "firebase": "^5.7.2",
+    "native-base": "^2.7.2",
+    "react-redux": "^5.0.7",
+    "redux-promise": "^0.6.0",
+    "firebase-admin": "^7.0.0",
+    "react-foursquare": "^1.0.3",
+    "react-navigation": "^2.11.2",
+    "tcomb-form-native": "^0.6.20",
+    "react-native-paper": "2.16.0",
+    "react-native-camera": "^0.4.1",
+    "react-native-elements": "^1.0.0",
+    "react-native-ionicons": "^4.4.6",
+    "babel-preset-react-native": "^5.0.2",
+    "react-native-qrcode-scanner": "^1.1.2",
+    "metro-react-native-babel-preset": "^0.48.1"
+  }
+}
