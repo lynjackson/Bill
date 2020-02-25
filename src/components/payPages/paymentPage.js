@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Button, StyleSheet, Text, View, ScrollView, TouchableHighlight, Image, TouchableOpacity, TouchableWithoutFeedback, TextInput} from 'react-native';
-import Breaker from '../../flexComponents/breaker';
+// import Breaker from '../../flexComponents/breaker';
 import {PriceBreakdown, SplitBreakdown, YourBreakdown, RouletteBreakdown, PickBreakdown, TreatBreakdown, CustomBreakdown} from '../../flexComponents/priceBreakdown';
 import { addUp, listItemCreator } from '../../helperFunctions/pureFunctions';
 import {Tipper} from '../tipper';

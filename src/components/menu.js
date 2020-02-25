@@ -49,14 +49,14 @@ class TopCatScroller extends React.Component {
       <View id='category-view' style={{position: 'absolute', top:0, alignItems:'flex-end', zIndex:200, backgroundColor: '#212121', width:'auto', flexDirection:'column', justifyContent:'center', alignItems:'center',  alignSelf:'flex-end', }}>
 
           <TouchableOpacity id='category-touch' style={{borderColor:'white', backgroundColor:this.state.backgroundColor,  padding:7, alignSelf:'flex-end', justifyContent:'center', flexDirection:'row'}} onPress={this.opDisplay}>
-            <Text id='category-text' style={{color:this.state.color,  fontSize:14, textAlign:'center', alignSelf:'center', fontFamily: 'Avenir', letterSpacing: 1.8, textTransform:'uppercase', position:'relative', top:1}}>{'Categories'}</Text>
+            <Text id='category-text' style={{color:this.state.color,  fontSize:14, textAlign:'center', alignSelf:'center', fontFamily: 'Roboto', letterSpacing: 1.8, textTransform:'uppercase', position:'relative', top:1}}>{'Categories'}</Text>
           </TouchableOpacity>
 
-          <View id='category-menu' style={{height: 'auto', width: 'auto', maxWidth:250, flexDirection:'column', position:'fixed', top:50, zIndex:20, backgroundColor: 'rgba(31,31,31,.9)', alignSelf:'center', display:this.state.opDisplay, justifyContent: 'center'}}>
+          <View id='category-menu' style={{height: 'auto', width: 'auto', maxWidth:250, flexDirection:'column', position:'absolute', top:50, zIndex:20, backgroundColor: 'rgba(31,31,31,.9)', alignSelf:'center', display:this.state.opDisplay, justifyContent: 'center'}}>
 
             {Object.keys(menuBoy).map((index)=>{return(
               <View key={index} id='category-menu-option' style={{flexDirection:'row', justifyContent: 'flex-end', borderBottomColor: 'black', position:'relative', borderBottomWidth: .5, paddingVertical:10,}}>
-                <View style={{width:'75%', paddingHorizontal: 10, marginRight: 10, borderRightColor: 'white', borderRightWidth:1}}><Text style={{fontFamily:'AvenirNext-Regular',fontSize:16, position:'relative', textAlign:'center', color:'white'}}>{index}</Text></View>
+                <View style={{width:'75%', paddingHorizontal: 10, marginRight: 10, borderRightColor: 'white', borderRightWidth:1}}><Text style={{fontFamily:'Roboto',fontSize:16, position:'relative', textAlign:'center', color:'white'}}>{index}</Text></View>
                 <View style={{width:'25%', marginRight:3, flexDirection: 'column', justifyContent: 'center', }}><Switch style={{alignSelf:'center'}} value={(this.props.screenProps.o_menu[index]) ? true : false} key={this.props.screenProps.o_order} onValueChange={()=>{(this.props.screenProps.o_menu[index]) ? this.props.screenProps.removeCat(index, this.props.screenProps.o_menu):this.props.screenProps.addCat(index, this.props.screenProps.o_fullMenu, this.props.screenProps.o_menu); console.log(this.props.screenProps.o_menu); console.log(this.props.screenProps.o_fullMenu, 'full')}}/></View>
               </View>
             )})}
@@ -131,21 +131,21 @@ class Menu extends Component {
     const { navigate } = this.props.navigation.navigate
     // console.log(this.props)
 
-    if (this.props.screenProps.o_menu === {}){
+    if (this.props.o_menu === {}){
       return <Text>Waiting for menu...</Text>
     }
     // console.log(this.props.screenProps)
       return (
         <View id='menu-view' style={[styles.menuPage , {zIndex:-1}]}>
           <View id='header' style={[styles.header, {zIndex:100, justifyContent:'center'}]}>
-            <TopCatScroller id='catgeory-menu' key={this.props.screenProps.o_order} category={this.state.category} screenProps={this.props.screenProps} refy={this.list} />
+            <TopCatScroller id='catgeory-menu' key={this.props.o_order} category={this.state.category} screenProps={this.props} refy={this.list} />
           </View>
 
         <StatusBar id='status-bar' barStyle="light-content" />
 
           <ScrollView id='menu-scrolly-part' ref={(ref) => this.list = ref} scrollEventThrottle={16} style={{position:'relative', zIndex: 10}}>
             <View style={styles_menu.items, {borderWidth: 1}}>
-              <MenuCategories screenProps={this.props.screenProps} navigate={this.props.navigation.navigate}/>
+              <MenuCategories screenProps={this.props} navigate={this.props.navigation.navigate}/>
             </View>
           </ScrollView>
         </View>
@@ -154,19 +154,19 @@ class Menu extends Component {
   // <ScrollView ref={(ref) => this.list = ref} onScroll={this.handleScroll} scrollEventThrottle={16}>
 
   componentDidMount(){
-    const categoriesArray = this.props.screenProps.o_APIData.response.menu.menus.items[0].entries.items
-    this.props.screenProps.f_setMenu(this.menuSetter(categoriesArray));
-    this.props.screenProps.f_fullMenu(this.menuSetter(categoriesArray));
+    const categoriesArray = this.props.o_APIData.response.menu.menus.items[0].entries.items
+    this.props.f_setMenu(this.menuSetter(categoriesArray));
+    this.props.f_fullMenu(this.menuSetter(categoriesArray));
     console.log('menu reset')
-    console.log(this.props.screenProps)
-    // this.props.screenProps.f_updateTable(tableTotal(this.props.screenProps.o_firebase));
-    this.props.screenProps.f_updateTable(tableTotal(this.props.screenProps.o_firebase).reduce((acc, price)=>{return price+acc}))
+    console.log(this.props)
+    // this.props.f_updateTable(tableTotal(this.props.o_firebase));
+    this.props.f_updateTable(tableTotal(this.props.o_firebase).reduce((acc, price)=>{return price+acc}))
 
-    console.log(this.props.screenProps.o_firebase, 'ya')
+    console.log(this.props.o_firebase, 'ya')
 
-    Object.values(this.props.screenProps.o_firebase).map((index)=>{})
+    Object.values(this.props.o_firebase).map((index)=>{})
 
-    console.log(this.props.screenProps.o_order, 'order')
+    console.log(this.props.o_order, 'order')
 
 
     console.log(this.props.fireObject, 'yi')

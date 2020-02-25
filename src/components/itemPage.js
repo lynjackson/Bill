@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button, StyleSheet, Text, View, ScrollView, Image, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, TextInput} from 'react-native';
 import {gStyle, appStyle} from '../containers/styles'
-import Breaker from '../flexComponents/breaker'
+// import Breaker from '../flexComponents/breaker.js'
 import { Ionicons } from '@expo/vector-icons';
 import Item from '../flexComponents/item';
 import BottomButton from '../flexComponents/bottomButton';

@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Font, AuthSession } from 'expo';
 // import * as AppAuth from 'expo-app-auth';
 //import thunk from 'thunk';
-import MainNav from './src/navs/mainNav'
+import TheApp from './src/navs/theApp'
 import reducers from './src/reducers';
 
 
@@ -20,12 +20,10 @@ export default class App extends React.Component {
     const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
     console.disableYellowBox = true;
 
-    
-
     return(
           <SafeAreaView style={{ flex: 1, backgroundColor: '#212121'}}>
             <Provider store={createStoreWithMiddleware(reducers)}>
-              <MainNav />
+              <TheApp />
             </Provider>
           </SafeAreaView>
     )

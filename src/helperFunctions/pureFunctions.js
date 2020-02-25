@@ -14,7 +14,7 @@ export const listItemCreator = function(itemArray, ListType, editor, screenProps
   let newArray = []
 //if there's nothing in cart, render a message saying so.
   if (itemArray.length === 0){
-    return <Text style={{textAlign: 'center', marginTop: 40, fontFamily: 'Avenir-Light', fontSize:24}}>CART IS EMPTY</Text>
+    return <Text style={{textAlign: 'center', marginTop: 40, fontFamily: 'Roboto', fontSize:24}}>CART IS EMPTY</Text>
   }
 //if there are objects in cart array, iterate over objects
   itemArray.map((item) => {

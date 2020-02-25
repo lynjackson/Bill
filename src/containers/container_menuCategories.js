@@ -22,7 +22,7 @@ const yPosFunc = (catName, catYValue) => {
     //create a new object with the category name as keys, and Y positions as values.
     return(
     <View onLayout={(event)=>{yPosFunc(category, event.nativeEvent.layout.y); screenProps.f_yPos(category[0].category, event.nativeEvent.layout.y) ; }} key={category}style={{backgroundColor: '#212121'}}>
-      <View style={{width: '100%', height: 'auto', flexDirection:'row', backgroundColor: '#212121', justifyContent: 'flex-start', alignItems:'center', paddingRight: 10, overflow: 'hidden', paddingVertical: 9}}><Text style={{color: 'white',  marginLeft: 7, fontFamily: 'Avenir-Medium', letterSpacing: 1.8, fontSize: 14, textTransform:'uppercase'}}>{category[0].category}</Text></View>
+      <View style={{width: '100%', height: 'auto', flexDirection:'row', backgroundColor: '#212121', justifyContent: 'flex-start', alignItems:'center', paddingRight: 10, overflow: 'hidden', paddingVertical: 9}}><Text style={{color: 'white',  marginLeft: 7, fontFamily: 'Roboto', letterSpacing: 1.8, fontSize: 14, textTransform:'uppercase'}}>{category[0].category}</Text></View>
       <View style={{justifyContent:'flex-start', alignItems: 'center', backgroundColor: '#edeef0',  height: 'auto',}}>
       {category
         //displays items with a valid price
@@ -43,7 +43,7 @@ export const styles_menuCategories = {
 
   textBox:{ flexDirection: 'column', flexShrink: 2, justifyContent: 'space-around', height: 'auto' },
 
-  foodName:{ fontSize: 15, fontFamily: 'Avenir', color: 'black', },
+  foodName:{ fontSize: 15, fontFamily: 'Roboto', color: 'black', },
 
   foodDescription:{ fontSize: 17, color: 'black', },
 

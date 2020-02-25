@@ -18,7 +18,7 @@ const setCategory = props.screenProps.f_setCategory
                   <Ionicons name="ios-star" size={14} style={{position:'relative', top:2}} />
               </View>
           </View>
-              <Text style={{marginVertical: 2.5, fontFamily: 'Avenir', letterSpacing:-.7, fontSize:17,}}>{props.foodItem.desc}</Text>
+              <Text style={{marginVertical: 2.5, fontFamily: 'Roboto', letterSpacing:-.7, fontSize:17,}}>{props.foodItem.desc}</Text>
               <Text style={styles.foodPrice}>{(isNaN(props.foodItem.price)) ? '':`$${Number(props.foodItem.price).toFixed(2)}`}</Text>
             </View>
             </TouchableHighlight>
@@ -36,9 +36,9 @@ const styles = StyleSheet.create({
 
   innerTouch:{ paddingHorizontal:8, minHeight: 50, width: '100%', flexDirection: 'column', justifyContent: 'space-between',  backgroundColor: 'white', shadowOffset:{  width: 4,  height: 8,  }, shadowColor: 'grey', shadowOpacity: .75, paddingVertical: 5,  },
 
-  foodName:{color: 'black', width: 'auto', maxWidth:'85%', paddingRight: 20, fontSize: 17, fontFamily:'Avenir-Heavy'},
+  foodName:{color: 'black', width: 'auto', maxWidth:'85%', paddingRight: 20, fontSize: 17, fontFamily:'Roboto'},
 
-  foodPrice:{ color: 'green', fontFamily: 'GillSans', width: 'auto', fontFamily: 'Avenir-Roman', marginVertical: .25, fontSize: 18, fontFamily: 'AvenirNext-Bold'},
+  foodPrice:{ color: 'green', fontFamily: 'GillSans', width: 'auto', fontFamily: 'Roboto', marginVertical: .25, fontSize: 18, fontFamily: 'Roboto'},
 
-  foodRating:{color: 'black', fontSize: 14, fontFamily: 'AvenirNext-Regular'},
+  foodRating:{color: 'black', fontSize: 14, fontFamily: 'Roboto'},
 })
